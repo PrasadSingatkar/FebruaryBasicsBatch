@@ -1,0 +1,8 @@
+Agenda:
+- Why Java?
+- Structure of Java Program 
+- Variables and datatypes
+- Comments
+- Operators
+- Control Statements
+

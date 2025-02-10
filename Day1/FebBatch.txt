@@ -1,0 +1,24 @@
+Agenda:
+
+- Introduction 
+		- Basic Introduction
+		- Experience in IT 
+		- Educational Background
+		- Technical Skills
+		- Project Experience( Technologies used in the project )
+		- Strengths & Interests
+
+- Format of training
+		- Training time  
+		- Assignments
+		- Session Material 
+	
+	* Assignment Submission:
+		- classRoom
+	* Session Material:
+		- gitHub ()
+
+- JDK & IDE Installation (IntelliJ IDE)
+
+- What is Full Stack Development?
+
