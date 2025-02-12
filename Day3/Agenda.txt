@@ -1,0 +1,6 @@
+Agenda:
+
+- Operators
+- Control Statements(if statement, if-else statement, if-else-if ladder)
+- Switch Case Statements 
+- Looping Statements(for loop, while loop, do-while loop)
