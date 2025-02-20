@@ -18,6 +18,11 @@ Agenda:
 	* Session Material:
 		- gitHub ()
 
+part 1: core java
+part 2: database
+part 3: adv. java
+part 4: springboot
+
 - JDK & IDE Installation (IntelliJ IDE)
 
 - What is Full Stack Development?
