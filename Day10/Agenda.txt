@@ -1,0 +1,6 @@
+Agenda:
+- Quick Revision
+- Stack
+- Capacity
+- ArrayList Vs Vector(Speed)
+- Set Overview
