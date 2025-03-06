@@ -1,0 +1,7 @@
+Agenda:
+~What is database?
+~Why Database?
+~Types of databases?
+~SQL
+~DBMS
+~Installation  
