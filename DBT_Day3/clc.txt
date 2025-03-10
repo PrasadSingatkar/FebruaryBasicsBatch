@@ -1,0 +1,413 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use flynaut;
+Database changed
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.05 sec)
+
+mysql> SELECT SAL*12 AS AnnualSalary from emp;
++--------------+
+| AnnualSalary |
++--------------+
+|      9600.00 |
+|     19200.00 |
+|     15000.00 |
+|     35700.00 |
+|     15000.00 |
+|     34200.00 |
+|     29400.00 |
+|     36000.00 |
+|     60000.00 |
+|     18000.00 |
+|     13200.00 |
+|     11400.00 |
+|     36000.00 |
+|     15600.00 |
++--------------+
+14 rows in set (0.01 sec)
+
+mysql> SELECT ename,SAL*12 AS AnnualSalary from emp;
++--------+--------------+
+| ename  | AnnualSalary |
++--------+--------------+
+| SMITH  |      9600.00 |
+| ALLEN  |     19200.00 |
+| WARD   |     15000.00 |
+| JONES  |     35700.00 |
+| MARTIN |     15000.00 |
+| BLAKE  |     34200.00 |
+| CLARK  |     29400.00 |
+| SCOTT  |     36000.00 |
+| KING   |     60000.00 |
+| TURNER |     18000.00 |
+| ADAMS  |     13200.00 |
+| JAMES  |     11400.00 |
+| FORD   |     36000.00 |
+| MILLER |     15600.00 |
++--------+--------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT * from emp where sal > 2000;
++-------+-------+-----------+------+------------+---------+------+--------+
+| EMPNO | ENAME | JOB       | MGR  | HIREDATE   | SAL     | COMM | DEPTNO |
++-------+-------+-----------+------+------------+---------+------+--------+
+|  7566 | JONES | MANAGER   | 7839 | 1981-04-02 | 2975.00 | NULL |     20 |
+|  7698 | BLAKE | MANAGER   | 7839 | 1981-05-01 | 2850.00 | NULL |     30 |
+|  7782 | CLARK | MANAGER   | 7839 | 1981-06-09 | 2450.00 | NULL |     10 |
+|  7788 | SCOTT | ANALYST   | 7566 | 1982-12-09 | 3000.00 | NULL |     20 |
+|  7839 | KING  | PRESIDENT | NULL | 1981-11-17 | 5000.00 | NULL |     10 |
+|  7902 | FORD  | ANALYST   | 7566 | 1981-12-03 | 3000.00 | NULL |     20 |
++-------+-------+-----------+------+------------+---------+------+--------+
+6 rows in set (0.01 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT ename,job From emp;
++--------+-----------+
+| ename  | job       |
++--------+-----------+
+| SMITH  | CLERK     |
+| ALLEN  | SALESMAN  |
+| WARD   | SALESMAN  |
+| JONES  | MANAGER   |
+| MARTIN | SALESMAN  |
+| BLAKE  | MANAGER   |
+| CLARK  | MANAGER   |
+| SCOTT  | ANALYST   |
+| KING   | PRESIDENT |
+| TURNER | SALESMAN  |
+| ADAMS  | CLERK     |
+| JAMES  | CLERK     |
+| FORD   | ANALYST   |
+| MILLER | CLERK     |
++--------+-----------+
+14 rows in set (0.00 sec)
+
+mysql> select ename,job
+    -> from emp
+    -> where job = 'Manager';
++-------+---------+
+| ename | job     |
++-------+---------+
+| JONES | MANAGER |
+| BLAKE | MANAGER |
+| CLARK | MANAGER |
++-------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select ename,job,sal
+    -> from emp
+    -> where deptno=30;
++--------+----------+---------+
+| ename  | job      | sal     |
++--------+----------+---------+
+| ALLEN  | SALESMAN | 1600.00 |
+| WARD   | SALESMAN | 1250.00 |
+| MARTIN | SALESMAN | 1250.00 |
+| BLAKE  | MANAGER  | 2850.00 |
+| TURNER | SALESMAN | 1500.00 |
+| JAMES  | CLERK    |  950.00 |
++--------+----------+---------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT ename,hiredate
+    -> FROM emp
+    -> Where hiredate between '1981-04-01' AND '1981-05-01';
++-------+------------+
+| ename | hiredate   |
++-------+------------+
+| JONES | 1981-04-02 |
+| BLAKE | 1981-05-01 |
++-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> Select ename, job
+    -> From emp
+    -> Where job='Manager' OR job = 'Clerk';
++--------+---------+
+| ename  | job     |
++--------+---------+
+| SMITH  | CLERK   |
+| JONES  | MANAGER |
+| BLAKE  | MANAGER |
+| CLARK  | MANAGER |
+| ADAMS  | CLERK   |
+| JAMES  | CLERK   |
+| MILLER | CLERK   |
++--------+---------+
+7 rows in set (0.00 sec)
+
+mysql> Select ename, job
+    -> From emp
+    -> Where job IN ('Manager','clerk');
++--------+---------+
+| ename  | job     |
++--------+---------+
+| SMITH  | CLERK   |
+| JONES  | MANAGER |
+| BLAKE  | MANAGER |
+| CLARK  | MANAGER |
+| ADAMS  | CLERK   |
+| JAMES  | CLERK   |
+| MILLER | CLERK   |
++--------+---------+
+7 rows in set (0.00 sec)
+
+mysql> Select ename, comm
+    -> From emp
+    -> Where comm is null;
++--------+------+
+| ename  | comm |
++--------+------+
+| SMITH  | NULL |
+| JONES  | NULL |
+| BLAKE  | NULL |
+| CLARK  | NULL |
+| SCOTT  | NULL |
+| KING   | NULL |
+| ADAMS  | NULL |
+| JAMES  | NULL |
+| FORD   | NULL |
+| MILLER | NULL |
++--------+------+
+10 rows in set (0.00 sec)
+
+mysql> Select ename, sal
+    -> From emp
+    -> Where comm is not null;
++--------+---------+
+| ename  | sal     |
++--------+---------+
+| ALLEN  | 1600.00 |
+| WARD   | 1250.00 |
+| MARTIN | 1250.00 |
+| TURNER | 1500.00 |
++--------+---------+
+4 rows in set (0.00 sec)
+
+mysql> Select ename
+    -> From emp
+    -> Where ename like ‘S%’;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?S%?' at line 3
+mysql>
+mysql> Select ename
+    -> From emp
+    -> Where ename like 'S%';
++-------+
+| ename |
++-------+
+| SMITH |
+| SCOTT |
++-------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql> Select ename
+    -> From emp
+    -> Where ename like '%S';
++-------+
+| ename |
++-------+
+| JONES |
+| ADAMS |
+| JAMES |
++-------+
+3 rows in set (0.00 sec)
+
+mysql> select ename
+    -> from emp
+    -> where ename like '%E%';
++--------+
+| ename  |
++--------+
+| ALLEN  |
+| JONES  |
+| BLAKE  |
+| TURNER |
+| JAMES  |
+| MILLER |
++--------+
+6 rows in set (0.00 sec)
+
+mysql> select ename
+    -> from emp
+    -> where ename like '__L%';
++--------+
+| ename  |
++--------+
+| ALLEN  |
+| MILLER |
++--------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT ename
+    -> From emp
+    -> Where ename like '_____';
++-------+
+| ename |
++-------+
+| SMITH |
+| ALLEN |
+| JONES |
+| BLAKE |
+| CLARK |
+| SCOTT |
+| ADAMS |
+| JAMES |
++-------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT ename, sal
+    -> From emp
+    -> Order by sal asc;
++--------+---------+
+| ename  | sal     |
++--------+---------+
+| SMITH  |  800.00 |
+| JAMES  |  950.00 |
+| ADAMS  | 1100.00 |
+| WARD   | 1250.00 |
+| MARTIN | 1250.00 |
+| MILLER | 1300.00 |
+| TURNER | 1500.00 |
+| ALLEN  | 1600.00 |
+| CLARK  | 2450.00 |
+| BLAKE  | 2850.00 |
+| JONES  | 2975.00 |
+| SCOTT  | 3000.00 |
+| FORD   | 3000.00 |
+| KING   | 5000.00 |
++--------+---------+
+14 rows in set (0.00 sec)
+
+mysql> Select ename,sal
+    -> From emp
+    -> Order by sal desc;
++--------+---------+
+| ename  | sal     |
++--------+---------+
+| KING   | 5000.00 |
+| SCOTT  | 3000.00 |
+| FORD   | 3000.00 |
+| JONES  | 2975.00 |
+| BLAKE  | 2850.00 |
+| CLARK  | 2450.00 |
+| ALLEN  | 1600.00 |
+| TURNER | 1500.00 |
+| MILLER | 1300.00 |
+| WARD   | 1250.00 |
+| MARTIN | 1250.00 |
+| ADAMS  | 1100.00 |
+| JAMES  |  950.00 |
+| SMITH  |  800.00 |
++--------+---------+
+14 rows in set (0.00 sec)
+
+mysql> Select ename, sal
+    -> From emp
+    -> Order by ename asc;
++--------+---------+
+| ename  | sal     |
++--------+---------+
+| ADAMS  | 1100.00 |
+| ALLEN  | 1600.00 |
+| BLAKE  | 2850.00 |
+| CLARK  | 2450.00 |
+| FORD   | 3000.00 |
+| JAMES  |  950.00 |
+| JONES  | 2975.00 |
+| KING   | 5000.00 |
+| MARTIN | 1250.00 |
+| MILLER | 1300.00 |
+| SCOTT  | 3000.00 |
+| SMITH  |  800.00 |
+| TURNER | 1500.00 |
+| WARD   | 1250.00 |
++--------+---------+
+14 rows in set (0.01 sec)
+
+mysql> select ename, sal
+    -> from emp
+    -> order by sal desc
+    -> limit 5;
++-------+---------+
+| ename | sal     |
++-------+---------+
+| KING  | 5000.00 |
+| SCOTT | 3000.00 |
+| FORD  | 3000.00 |
+| JONES | 2975.00 |
+| BLAKE | 2850.00 |
++-------+---------+
+5 rows in set (0.00 sec)
+
+mysql>

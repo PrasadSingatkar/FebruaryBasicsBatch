@@ -1,0 +1,16 @@
+Agenda:
+
+Operators
+Where Clause
+BETWEEN.........AND Operator
+IN Operator
+IS NULL Operator
+LIKE Operator
+ORDER BY clause
+LIMIT clause
+
+
+
+
+
+
