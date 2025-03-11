@@ -1,0 +1,9 @@
+Agenda:
+- RECAP
+- Arithmetic Operators Examples
+- Distinct Keyword
+- Group By Clause
+- Aggregate Functions
+
+- DDL``
+- Single Row Functions``

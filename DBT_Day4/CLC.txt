@@ -1,0 +1,335 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 13
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use flynaut;
+Database changed
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select ename, job, sal
+    -> from emp
+    -> order by desc
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 3
+mysql> select ename, job,sal
+    -> from emp
+    -> order by sal desc
+    -> limit 5 offset 2;
++-------+----------+---------+
+| ename | job      | sal     |
++-------+----------+---------+
+| FORD  | ANALYST  | 3000.00 |
+| JONES | MANAGER  | 2975.00 |
+| BLAKE | MANAGER  | 2850.00 |
+| CLARK | MANAGER  | 2450.00 |
+| ALLEN | SALESMAN | 1600.00 |
++-------+----------+---------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT ENAME,SAL, SAL+400 AS NEW_SALARY
+    -> From emp;
++--------+---------+------------+
+| ENAME  | SAL     | NEW_SALARY |
++--------+---------+------------+
+| SMITH  |  800.00 |    1200.00 |
+| ALLEN  | 1600.00 |    2000.00 |
+| WARD   | 1250.00 |    1650.00 |
+| JONES  | 2975.00 |    3375.00 |
+| MARTIN | 1250.00 |    1650.00 |
+| BLAKE  | 2850.00 |    3250.00 |
+| CLARK  | 2450.00 |    2850.00 |
+| SCOTT  | 3000.00 |    3400.00 |
+| KING   | 5000.00 |    5400.00 |
+| TURNER | 1500.00 |    1900.00 |
+| ADAMS  | 1100.00 |    1500.00 |
+| JAMES  |  950.00 |    1350.00 |
+| FORD   | 3000.00 |    3400.00 |
+| MILLER | 1300.00 |    1700.00 |
++--------+---------+------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT ENAME,SAL, SAL+400
+    -> From emp;
++--------+---------+---------+
+| ENAME  | SAL     | SAL+400 |
++--------+---------+---------+
+| SMITH  |  800.00 | 1200.00 |
+| ALLEN  | 1600.00 | 2000.00 |
+| WARD   | 1250.00 | 1650.00 |
+| JONES  | 2975.00 | 3375.00 |
+| MARTIN | 1250.00 | 1650.00 |
+| BLAKE  | 2850.00 | 3250.00 |
+| CLARK  | 2450.00 | 2850.00 |
+| SCOTT  | 3000.00 | 3400.00 |
+| KING   | 5000.00 | 5400.00 |
+| TURNER | 1500.00 | 1900.00 |
+| ADAMS  | 1100.00 | 1500.00 |
+| JAMES  |  950.00 | 1350.00 |
+| FORD   | 3000.00 | 3400.00 |
+| MILLER | 1300.00 | 1700.00 |
++--------+---------+---------+
+14 rows in set (0.00 sec)
+
+mysql> select ename,sal,sal-200 as "Updated Salary"
+    -> fromemp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fromemp' at line 2
+mysql> select ename,sal,sal-200 as 'Updated Salary'
+    -> from emp;
++--------+---------+----------------+
+| ename  | sal     | Updated Salary |
++--------+---------+----------------+
+| SMITH  |  800.00 |         600.00 |
+| ALLEN  | 1600.00 |        1400.00 |
+| WARD   | 1250.00 |        1050.00 |
+| JONES  | 2975.00 |        2775.00 |
+| MARTIN | 1250.00 |        1050.00 |
+| BLAKE  | 2850.00 |        2650.00 |
+| CLARK  | 2450.00 |        2250.00 |
+| SCOTT  | 3000.00 |        2800.00 |
+| KING   | 5000.00 |        4800.00 |
+| TURNER | 1500.00 |        1300.00 |
+| ADAMS  | 1100.00 |         900.00 |
+| JAMES  |  950.00 |         750.00 |
+| FORD   | 3000.00 |        2800.00 |
+| MILLER | 1300.00 |        1100.00 |
++--------+---------+----------------+
+14 rows in set (0.00 sec)
+
+mysql> select ename,sal, sal*0.10 AS BONUS
+    -> from emp;
++--------+---------+----------+
+| ename  | sal     | BONUS    |
++--------+---------+----------+
+| SMITH  |  800.00 |  80.0000 |
+| ALLEN  | 1600.00 | 160.0000 |
+| WARD   | 1250.00 | 125.0000 |
+| JONES  | 2975.00 | 297.5000 |
+| MARTIN | 1250.00 | 125.0000 |
+| BLAKE  | 2850.00 | 285.0000 |
+| CLARK  | 2450.00 | 245.0000 |
+| SCOTT  | 3000.00 | 300.0000 |
+| KING   | 5000.00 | 500.0000 |
+| TURNER | 1500.00 | 150.0000 |
+| ADAMS  | 1100.00 | 110.0000 |
+| JAMES  |  950.00 |  95.0000 |
+| FORD   | 3000.00 | 300.0000 |
+| MILLER | 1300.00 | 130.0000 |
++--------+---------+----------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT ename, sal, sal/2 AS Half_Salary from emp;
++--------+---------+-------------+
+| ename  | sal     | Half_Salary |
++--------+---------+-------------+
+| SMITH  |  800.00 |  400.000000 |
+| ALLEN  | 1600.00 |  800.000000 |
+| WARD   | 1250.00 |  625.000000 |
+| JONES  | 2975.00 | 1487.500000 |
+| MARTIN | 1250.00 |  625.000000 |
+| BLAKE  | 2850.00 | 1425.000000 |
+| CLARK  | 2450.00 | 1225.000000 |
+| SCOTT  | 3000.00 | 1500.000000 |
+| KING   | 5000.00 | 2500.000000 |
+| TURNER | 1500.00 |  750.000000 |
+| ADAMS  | 1100.00 |  550.000000 |
+| JAMES  |  950.00 |  475.000000 |
+| FORD   | 3000.00 | 1500.000000 |
+| MILLER | 1300.00 |  650.000000 |
++--------+---------+-------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT JOB
+    -> From emp;
++-----------+
+| JOB       |
++-----------+
+| CLERK     |
+| SALESMAN  |
+| MANAGER   |
+| ANALYST   |
+| PRESIDENT |
++-----------+
+5 rows in set (0.01 sec)
+
+mysql> SELECT DISTINCT DEPTNO
+    -> From emp;
++--------+
+| DEPTNO |
++--------+
+|     20 |
+|     30 |
+|     10 |
++--------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT DEPTNO
+    -> From emp;
++--------+
+| DEPTNO |
++--------+
+|     20 |
+|     30 |
+|     10 |
++--------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT DEPTNO
+    -> From emp
+    -> order by deptno desc;
++--------+
+| DEPTNO |
++--------+
+|     30 |
+|     20 |
+|     10 |
++--------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT deptno,count(*) as total_employees
+    -> From emp
+    -> Group by deptno;
++--------+-----------------+
+| deptno | total_employees |
++--------+-----------------+
+|     20 |               5 |
+|     30 |               6 |
+|     10 |               3 |
++--------+-----------------+
+3 rows in set (0.01 sec)
+
+mysql> Select COUNT(*) AS total_employees
+    -> From emp;
++-----------------+
+| total_employees |
++-----------------+
+|              14 |
++-----------------+
+1 row in set (0.01 sec)
+
+mysql> Select deptno, count(*) as Total_employees
+    -> From emp;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'flynaut.emp.DEPTNO'; this is incompatible with sql_mode=only_full_group_by
+mysql> Select deptno, count(*) as Total_employees
+    -> From emp
+    -> Group by deptno;
++--------+-----------------+
+| deptno | Total_employees |
++--------+-----------------+
+|     20 |               5 |
+|     30 |               6 |
+|     10 |               3 |
++--------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql> Select count(DISTINCT JOB) As Unique_jobs from emp;
++-------------+
+| Unique_jobs |
++-------------+
+|           5 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(job) as all_jobs from emp;
++----------+
+| all_jobs |
++----------+
+|       14 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> Select SUM(sal) AS total_salary
+    -> From emp;
++--------------+
+| total_salary |
++--------------+
+|     29025.00 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DEPTNO, SUM(sal) As Total_salary
+    -> From emp;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'flynaut.emp.DEPTNO'; this is incompatible with sql_mode=only_full_group_by
+mysql> SELECT DEPTNO, SUM(sal) As Total_salary
+    -> From emp
+    -> Group by deptno;
++--------+--------------+
+| DEPTNO | Total_salary |
++--------+--------------+
+|     20 |     10875.00 |
+|     30 |      9400.00 |
+|     10 |      8750.00 |
++--------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> Select avg(sal) As AVG_salary
+    -> From emp;
++-------------+
+| AVG_salary  |
++-------------+
+| 2073.214286 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT job, avg(sal) as avg_salary
+    -> From emp
+    -> Group by job;
++-----------+-------------+
+| job       | avg_salary  |
++-----------+-------------+
+| CLERK     | 1037.500000 |
+| SALESMAN  | 1400.000000 |
+| MANAGER   | 2758.333333 |
+| ANALYST   | 3000.000000 |
+| PRESIDENT | 5000.000000 |
++-----------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT MIN(Sal) as Minimum_salary, MAX(SAL) as Maximum_salary from emp;
++----------------+----------------+
+| Minimum_salary | Maximum_salary |
++----------------+----------------+
+|         800.00 |        5000.00 |
++----------------+----------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT deptno, min(sal) as min_salary, max(sal) as max_salary
+    -> from emp
+    -> group by deptno;
++--------+------------+------------+
+| deptno | min_salary | max_salary |
++--------+------------+------------+
+|     20 |     800.00 |    3000.00 |
+|     30 |     950.00 |    2850.00 |
+|     10 |    1300.00 |    5000.00 |
++--------+------------+------------+
+3 rows in set (0.00 sec)
+
+mysql>
