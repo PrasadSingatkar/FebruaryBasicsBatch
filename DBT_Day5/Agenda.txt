@@ -1,0 +1,6 @@
+Agenda:
+- Assignment
+- DDL
+- Single Row Functions
+
+
