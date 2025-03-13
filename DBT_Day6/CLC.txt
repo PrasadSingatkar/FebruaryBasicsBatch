@@ -1,0 +1,137 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select ceil(12.3);
++------------+
+| ceil(12.3) |
++------------+
+|         13 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> Select ceil(12.0);
++------------+
+| ceil(12.0) |
++------------+
+|         12 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> Select floor(12.3);
++-------------+
+| floor(12.3) |
++-------------+
+|          12 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select ceil(-^C.3);
+mysql> select ceil(-12.3);
++-------------+
+| ceil(-12.3) |
++-------------+
+|         -12 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select floor(-12.3);
++--------------+
+| floor(-12.3) |
++--------------+
+|          -13 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> Select ascii(‘A’);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?A?)' at line 1
+mysql> Select ascii('A');
++------------+
+| ascii('A') |
++------------+
+|         65 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> Select ASCII('Flynaut');
++------------------+
+| ASCII('Flynaut') |
++------------------+
+|               70 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT substr('database',2,4);
++------------------------+
+| substr('database',2,4) |
++------------------------+
+| atab                   |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT UPPER('FlyNaUt');
++------------------+
+| UPPER('FlyNaUt') |
++------------------+
+| FLYNAUT          |
++------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT LOWER('FlyNaUt');
++------------------+
+| LOWER('FlyNaUt') |
++------------------+
+| flynaut          |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> Select instr('Database','base');
++--------------------------+
+| instr('Database','base') |
++--------------------------+
+|                        5 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> Select trim('       Hello        ');
++------------------------------+
+| trim('       Hello        ') |
++------------------------------+
+| Hello                        |
++------------------------------+
+1 row in set (0.00 sec)
+
+mysql> Select lpad('Hello',8,'*');
++---------------------+
+| lpad('Hello',8,'*') |
++---------------------+
+| ***Hello            |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> Select rpad('Hello',8, '*');
++----------------------+
+| rpad('Hello',8, '*') |
++----------------------+
+| Hello***             |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> Select length('flynaut');
++-------------------+
+| length('flynaut') |
++-------------------+
+|                 7 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql>

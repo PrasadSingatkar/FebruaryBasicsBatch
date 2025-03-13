@@ -1,0 +1,5 @@
+Agenda:
+- Single Row Functions
+- Assignment Solving
+- Having Clause
+- Subquery
