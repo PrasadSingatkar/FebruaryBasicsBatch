@@ -1,0 +1,14 @@
+Agenda:
+- Aggregate, distinct, group by assignment
+- Subquery
+- Date Functions
+
+
+Select DATE_FORMAT(curdate(),'%M %d %Y');
+
+Select DATE_FORMAT(curdate(),'%M %D %Y');
+
+Select empname, date_format(hiredate, '%M %D %Y') as Date
+From emp;
+
+Select datediff('2022-11-2','2000-12-01') as days;
