@@ -1,0 +1,21 @@
+Agenda:
+1. Correlated Query
+2. DATE Functions
+3. DML
+4. Introduction of JOINS
+
+
+Update emp
+Set job = 'SENIOR CLERK'
+Where empno = 7369;
+
+SELECT CONCAT(TRIM(empname), '.') as empNames 
+From emp;
+
+INSERT INTO DEPT VALUES(10,'ACCOUNTING','NEW YORK');
+INSERT INTO DEPT VALUES(20,'RESEARCH','DALLAS');
+INSERT INTO DEPT VALUES(30,'SALES','CHICAGO');
+INSERT INTO DEPT VALUES(40,'OPERATIONS','BOSTON');
+
+
+
