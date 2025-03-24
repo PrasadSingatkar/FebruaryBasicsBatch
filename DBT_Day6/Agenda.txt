@@ -2,4 +2,23 @@ Agenda:
 - Single Row Functions
 - Assignment Solving
 - Having Clause
-- Subquery
+
+
+
+Select ascii('A');
+
+Select ASCII('Flynaut');
+
+SELECT substr('database',2,4);
+
+SELECT UPPER('FlyNaUt');
+
+Select instr('Database','base');
+
+Select trim('       Hello        ');
+
+Select lpad('Hello',8,'*');
+
+Select rpad('Hello',8, '*');
+
+Select length('flynaut');

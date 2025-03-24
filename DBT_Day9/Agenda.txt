@@ -1,0 +1,4 @@
+Agenda:
+1. Assignment (Single Row Functions)
+2. Assignment (Subquery)
+3. JOINS 
