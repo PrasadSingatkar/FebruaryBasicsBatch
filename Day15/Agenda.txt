@@ -1,0 +1,3 @@
+Agenda:
+1. Collections and Collection -> Methods of utility class
+2. Object Class
