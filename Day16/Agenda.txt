@@ -1,0 +1,7 @@
+Agenda:
+1. getClass()
+2. equals()
+3. comparable 
+
+4. Comparator
+5. Threads
