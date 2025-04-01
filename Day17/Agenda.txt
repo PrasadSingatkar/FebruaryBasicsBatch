@@ -1,0 +1,5 @@
+Agenda:
+1. Comparator Interface
+2. TASK: Student
+3. TASK: Book
+4. Threads
