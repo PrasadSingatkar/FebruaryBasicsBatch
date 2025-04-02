@@ -1,0 +1,11 @@
+Agenda:
+1. Creating a simple thread
+(By Extending Thread Class & By Implementing Runnable interface)
+2. Thread Methods
+3. New State Impl
+4. Runnable State Impl
+5. Blocked/Waiting State Impl
+6. Complete Example of Thread life cycle
+
+7. SpringBoot
+  
