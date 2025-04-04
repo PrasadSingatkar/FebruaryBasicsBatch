@@ -1,0 +1,15 @@
+Agenda:
+
+1. Returning date 
+
+TASK: Develop a simple Spring Boot application that defines an Employee class with basic attributes and exposes an API endpoint to return employee details in JSON format.
+
+2. Maven
+3. Project Structure
+4. POM.xml
+5. Maven Flow
+6. Project Coordinates
+7. Maven Wrapper Files
+8. application.properties 
+9. starters
+10. SB DEV TOOLS
