@@ -1,0 +1,13 @@
+Agenda:
+
+1. SpringBoot Actuators
+
+2. Security
+
+# running springboot application without IDE
+
+3. Inversion of Control(IOC)
+
+4. Spring Dependency Injection
+
+5. Spring Autowiring
