@@ -1,0 +1,13 @@
+Agenda:
+1. Development Process for constructor injection
+2. @Component Annotation 
+3. Constructor Injection Behind the Scenes 
+4. @SpringBootApplication Annotation
+5. Setter Injection 
+6. Field Injection code in D6 in DBatch
+7. Bean Scopes
+8. Hibernate/JPA
+9. Benefits of using hibernate
+10.What is hibernate?
+11. What is JPA?
+12. Benefits of JPA
